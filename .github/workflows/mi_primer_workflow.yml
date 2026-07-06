@@ -8,7 +8,7 @@ on: [push]
 jobs:
   ejecutar-python:
   #4. ¿En que so va a atrabajar el robot
-  runs-on: ubuntu-lastest
+  runs-on: ubuntu-latest
 
   steps:
     - name: Obtener el copdigo del repositorio
