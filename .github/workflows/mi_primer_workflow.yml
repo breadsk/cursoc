@@ -1,23 +1,25 @@
-#1. El nombre de nuestro flujo de trabajo
-name: Mi primer workflow
+#1. El nombre de tu flujo de trabajo ( esto aparecera en la pestaña actions )
+name: Mi primer workflow en python
 
-#2. Cuando se va a ejecutar esto
+#2. Cuando se va a ejecutar esto ?
+#esto se va a ejecutar cuando hagamos un push
 on: [push]
 
-#3que tareas a a hacer
+#3.¿Que tareas (jobs) va a realizar el robot
 jobs:
   ejecutar-python:
-  #4. ¿En que so va a atrabajar el robot
-  runs-on: ubuntu-latest
+    #4. ¿En que sistema operativo va a trabajar el robot?
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Obtener el copdigo del repositorio
-      uses: actions/checkout@v4
+    #5. Los pasos secuenciales que deseo seguir
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
 
-    - name: Instalar y configurar python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.14.2"
+      - name: Instalar y configurar python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14.2"
 
-    - name: Ejecutar el script ejercicio1.py
-      run: ejercicio1.py
+      - name: Ejecutar el script ejercicio1.py
+        run: python ejercicio1.py
